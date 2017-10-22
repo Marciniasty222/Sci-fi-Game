@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Miasto
+  m_EditorClassIdentifier: Assembly-CSharp::LootTable
+  lootTable:
+  - {fileID: 11400000, guid: 07522fa0ee9d84043a72d873464faf03, type: 2}
+  - {fileID: 11400000, guid: f110fdda1f7ecdd4ab57350f116e3d1e, type: 2}
+  - {fileID: 11400000, guid: ad2e96a2d93257d4a86e222cb257bf71, type: 2}
+  dropChance:
+  - 1
+  - 0
+  - 0
+  - 0
