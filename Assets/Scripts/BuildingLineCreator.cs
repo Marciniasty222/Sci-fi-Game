@@ -24,21 +24,13 @@ public class BuildingLineCreator : MonoBehaviour {
                 punktEnd.transform.position = hitRay.point;
             }
 
-            float sinAlpha = (punktEnd.transform.position.y - punktStart.transform.position.y) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.y - punktStart.transform.position.y), 2)));
-            float cosAlpha = (punktEnd.transform.position.x - punktStart.transform.position.x) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.y - punktStart.transform.position.y), 2)));
+            float sinAlpha = (punktEnd.transform.position.z - punktStart.transform.position.z) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.z - punktStart.transform.position.z), 2)));
+            float cosAlpha = (punktEnd.transform.position.x - punktStart.transform.position.x) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.z - punktStart.transform.position.z), 2)));
 
-            punktA.transform.position = new Vector3(punktStart.transform.position.x + l * sinAlpha,0, punktStart.transform.position.y - l * cosAlpha);
-            //C.x = A.x + l * sinAlpha;
-            //C.y = A.y - l * cosAlpha;
-            punktB.transform.position = new Vector3(punktStart.transform.position.x - l * sinAlpha,0, punktStart.transform.position.y + l * cosAlpha);
-            //D.x = A.x - l * sinAlpha;
-            //D.y = A.y + l * cosAlpha;
-            punktC.transform.position = new Vector3(punktEnd.transform.position.x + l * sinAlpha,0, punktEnd.transform.position.y - l * cosAlpha);
-            //E.x = B.x + l * sinAlpha;
-            //E.y = B.y - l * cosAlpha;
-            punktD.transform.position = new Vector3(punktEnd.transform.position.x - l * sinAlpha,0, punktEnd.transform.position.y + l * cosAlpha);
-            //F.x = B.x - l * sinAlpha;
-            //F.y = B.y + l * cosAlpha;
+            punktA.transform.position = new Vector3(punktStart.transform.position.x + l * sinAlpha,0, punktStart.transform.position.z - l * cosAlpha);
+            punktB.transform.position = new Vector3(punktStart.transform.position.x - l * sinAlpha,0, punktStart.transform.position.z + l * cosAlpha);
+            punktC.transform.position = new Vector3(punktEnd.transform.position.x + l * sinAlpha,0, punktEnd.transform.position.z - l * cosAlpha);
+            punktD.transform.position = new Vector3(punktEnd.transform.position.x - l * sinAlpha,0, punktEnd.transform.position.z + l * cosAlpha);
         }
         else
         {
