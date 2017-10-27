@@ -16,7 +16,7 @@ public class BuildingLineCreator : MonoBehaviour {
 
 
     void Update () {
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             RaycastHit hitRay;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), out hitRay, 128))
@@ -27,10 +27,10 @@ public class BuildingLineCreator : MonoBehaviour {
             float sinAlpha = (punktEnd.transform.position.z - punktStart.transform.position.z) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.z - punktStart.transform.position.z), 2)));
             float cosAlpha = (punktEnd.transform.position.x - punktStart.transform.position.x) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.z - punktStart.transform.position.z), 2)));
 
-            punktA.transform.position = new Vector3(punktStart.transform.position.x + l * sinAlpha,0, punktStart.transform.position.z - l * cosAlpha);
-            punktB.transform.position = new Vector3(punktStart.transform.position.x - l * sinAlpha,0, punktStart.transform.position.z + l * cosAlpha);
-            punktC.transform.position = new Vector3(punktEnd.transform.position.x + l * sinAlpha,0, punktEnd.transform.position.z - l * cosAlpha);
-            punktD.transform.position = new Vector3(punktEnd.transform.position.x - l * sinAlpha,0, punktEnd.transform.position.z + l * cosAlpha);
+            punktA.transform.position = new Vector3(punktStart.transform.position.x + l * sinAlpha, 0, punktStart.transform.position.z - l * cosAlpha);
+            punktB.transform.position = new Vector3(punktStart.transform.position.x - l * sinAlpha, 0, punktStart.transform.position.z + l * cosAlpha);
+            punktC.transform.position = new Vector3(punktEnd.transform.position.x + l * sinAlpha, 0, punktEnd.transform.position.z - l * cosAlpha);
+            punktD.transform.position = new Vector3(punktEnd.transform.position.x - l * sinAlpha, 0, punktEnd.transform.position.z + l * cosAlpha);
         }
         else
         {
