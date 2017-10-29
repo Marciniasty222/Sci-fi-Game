@@ -25,11 +25,13 @@ public class BuildingLineCreator : MonoBehaviour {
             {
                 punktEnd.transform.position = Vector3Int.RoundToInt(hitRay.point);
             }
-            if (punktStart.transform.position == punktEnd.transform.position)
-                return;
-            float sinAlpha = (punktEnd.transform.position.z - punktStart.transform.position.z) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.z - punktStart.transform.position.z), 2)));
-            float cosAlpha = (punktEnd.transform.position.x - punktStart.transform.position.x) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.z - punktStart.transform.position.z), 2)));
-            
+            float sinAlpha = 0;
+            float cosAlpha = 0;
+            if (punktStart.transform.position != punktEnd.transform.position)
+            {
+                sinAlpha = (punktEnd.transform.position.z - punktStart.transform.position.z) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.z - punktStart.transform.position.z), 2)));
+                cosAlpha = (punktEnd.transform.position.x - punktStart.transform.position.x) / (Mathf.Sqrt(Mathf.Pow((punktEnd.transform.position.x - punktStart.transform.position.x), 2) + Mathf.Pow((punktEnd.transform.position.z - punktStart.transform.position.z), 2)));
+            }
             punktA.transform.position = new Vector3(punktStart.transform.position.x + l * sinAlpha, 0, punktStart.transform.position.z - l * cosAlpha);
             punktB.transform.position = new Vector3(punktStart.transform.position.x - l * sinAlpha, 0, punktStart.transform.position.z + l * cosAlpha);
             punktC.transform.position = new Vector3(punktEnd.transform.position.x + l * sinAlpha, 0, punktEnd.transform.position.z - l * cosAlpha);
