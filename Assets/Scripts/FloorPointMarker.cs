@@ -11,6 +11,8 @@ public class FloorPointMarker : MonoBehaviour
     public Material material;
     public GameObject objectHover;
 
+    public Vector2[] array;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1))
@@ -62,9 +64,21 @@ public class FloorPointMarker : MonoBehaviour
             Mesh msh = new Mesh();
             
             msh.vertices = vertices;
-            
             msh.triangles = z;
-            //msh.RecalculateNormals(); Czarny mesh, słabo :(
+            Vector2[] UVs = new Vector2[msh.vertices.Length];
+            
+            for (int i = 0; i < msh.vertices.Length; i++)
+            {
+                UVs[i] = new Vector2(vertices[i].x, vertices[i].z);
+            }
+            msh.uv = UVs;
+
+            array = UVs;
+
+
+
+
+            //msh.RecalculateNormals(); //Czarny mesh, słabo :(
             msh.RecalculateBounds();
 
             if (msh.vertices.Length >= 3)

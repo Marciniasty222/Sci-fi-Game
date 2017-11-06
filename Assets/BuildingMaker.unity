@@ -194,8 +194,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 171667033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 621, y: 275, z: 0}
-  m_LocalScale: {x: 1.192948, y: 1.192948, z: 1.192948}
+  m_LocalPosition: {x: 375.5, y: 312, z: 0}
+  m_LocalScale: {x: 0.98807895, y: 0.98807895, z: 0.98807895}
   m_Children:
   - {fileID: 1865183554}
   - {fileID: 1016062772}
@@ -250,8 +250,9 @@ MonoBehaviour:
   floorPointPrefab: {fileID: 1828573108254906, guid: 3c7a362d27e49884399600702b4202da,
     type: 2}
   houseModel: {fileID: 1587978295}
-  material: {fileID: 2100000, guid: abaf5f9170816f145ab93cf48cbcd7a1, type: 2}
+  material: {fileID: 2100000, guid: 0c1080e4282e92247be8eb4ddabf5907, type: 2}
   objectHover: {fileID: 0}
+  array: []
 --- !u!1 &315852042
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,7 +958,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1016062771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 505.45758, y: -215.12097, z: 0}
+  m_LocalPosition: {x: 364.9288, y: -300.36386, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 896113543}
@@ -1986,7 +1987,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1865183553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 512.3599, y: 226.12097, z: 0}
+  m_LocalPosition: {x: 371.83115, y: 311.36386, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1822533692}
