@@ -250,7 +250,7 @@ MonoBehaviour:
   floorPointPrefab: {fileID: 1828573108254906, guid: 3c7a362d27e49884399600702b4202da,
     type: 2}
   houseModel: {fileID: 1587978295}
-  material: {fileID: 2100000, guid: 0c1080e4282e92247be8eb4ddabf5907, type: 2}
+  material: {fileID: 2100000, guid: 2138085f9bb8f924c96481926b214033, type: 2}
   objectHover: {fileID: 0}
   array: []
 --- !u!1 &315852042
@@ -1222,7 +1222,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6f0b7bfe77799c54f9fe1f5e54cdb916, type: 2}
+  - {fileID: 2100000, guid: 7fe078a6c03da9749848b9fe7e538847, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

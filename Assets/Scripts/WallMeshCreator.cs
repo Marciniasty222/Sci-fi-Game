@@ -9,7 +9,7 @@ public class WallMeshCreator : MonoBehaviour
         #region UVs
         float x = Vector3.Distance(punktA, punktB);
         float y = Vector3.Distance(punktC, punktB);
-        Vector2[] newUV = new Vector2[] { new Vector2(0,0), new Vector2(x,0), new Vector2(x+y,0), new Vector2(y,0), new Vector2(0,1), new Vector2(x,1), new Vector2(x+y,1), new Vector2(y,1) }; //TODO: Dla ściany wyznaczyć wielkość powierzchni
+        Vector2[] newUV = new Vector2[] { new Vector2(0,0), new Vector2(x/ GridHeightChanger.floorSize, 0), new Vector2((x+y)/ GridHeightChanger.floorSize, 0), new Vector2(y/ GridHeightChanger.floorSize, 0), new Vector2(0, 1), new Vector2(x/ GridHeightChanger.floorSize, 1), new Vector2((x+y)/ GridHeightChanger.floorSize, 1), new Vector2(y/GridHeightChanger.floorSize, 1) };
         #endregion
         #region Vertices
         Vector3[] newVertices;
