@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     // SERIALIZED
     public CharacterController characterController;
-    public Camera camera;
+    public Camera playerCamera;
 
     public float cameraRotationX = 0.0f;
 
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        camera = Camera.main;
+        playerCamera = Camera.main;
     }
 
     void Update()
@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0));
         cameraRotationX += Input.GetAxis("Mouse Y");
         cameraRotationX = Mathf.Clamp(cameraRotationX, -90.0f, 90.0f);
-        camera.transform.localEulerAngles = new Vector3(-cameraRotationX, camera.transform.localEulerAngles.y, camera.transform.localEulerAngles.z);
+        playerCamera.transform.localEulerAngles = new Vector3(-cameraRotationX, playerCamera.transform.localEulerAngles.y, playerCamera.transform.localEulerAngles.z);
 
 
         //movement

@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class WallMeshCreator : MonoBehaviour
 {
-    public float floorHeight;
     public void BuildMesh(Vector3 punktA, Vector3 punktB, Vector3 punktC, Vector3 punktD)
     {
+        #region UVs
+        float x = Vector3.Distance(punktA, punktB);
+        float y = Vector3.Distance(punktC, punktB);
+        Vector2[] newUV = new Vector2[] { new Vector2(0,0), new Vector2(x,0), new Vector2(x+y,0), new Vector2(y,0), new Vector2(0,1), new Vector2(x,1), new Vector2(x+y,1), new Vector2(y,1) }; //TODO: Dla ściany wyznaczyć wielkość powierzchni
+        #endregion
+        #region Vertices
         Vector3[] newVertices;
-        Vector2[] newUV = new Vector2[0]; //TODO: Dla ściany wyznaczyć wielkość powierzchni
-        int[] newTriangles;
-
+        newVertices = new Vector3[] { punktA, punktB, punktD, punktC, RaiseY(punktA, GridHeightChanger.floorSize), RaiseY(punktB, GridHeightChanger.floorSize), RaiseY(punktD, GridHeightChanger.floorSize), RaiseY(punktC, GridHeightChanger.floorSize) };
+        #endregion
+        #region Triangles
+        int[] newTriangles = new int[] { 0, 1, 5, 0, 5, 4, 1, 2, 6, 1, 6, 5, 2, 3, 7, 2, 7, 6, 3, 0, 4, 3, 4, 7 };
+        //newTriangles = new int[] { 0, 1, 5, 0, 5, 4, 1, 3, 7, 1, 7, 5, 3, 2, 6, 3, 6, 7, 2, 0, 4, 2, 4, 6 }; //Stara formuła, z uporządkowanym "newVertices"
+        #endregion
+        
         Mesh mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-
-        newVertices = new Vector3[] { punktA, punktB, punktD, punktC, RaiseY(punktA, floorHeight), RaiseY(punktB, floorHeight), RaiseY(punktD, floorHeight), RaiseY(punktC, floorHeight) };
-        newTriangles = new int[] { 0, 1, 5, 0, 5, 4, 1, 2, 6, 1, 6, 5, 2, 3, 7, 2, 7, 6, 3, 0, 4, 3, 4, 7 };
-      //newTriangles = new int[] { 0, 1, 5, 0, 5, 4, 1, 3, 7, 1, 7, 5, 3, 2, 6, 3, 6, 7, 2, 0, 4, 2, 4, 6 };
-
-
         mesh.vertices = newVertices;
         mesh.uv = newUV;
         mesh.triangles = newTriangles;
