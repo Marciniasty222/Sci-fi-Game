@@ -21,6 +21,7 @@ public class FloorPointMarker : MonoBehaviour
             if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), out hitRay, 128))
             {
                 GameObject point = Instantiate(floorPointPrefab, new Vector3( Vector3Int.RoundToInt(hitRay.point).x, hitRay.point.y, Vector3Int.RoundToInt(hitRay.point).z), Quaternion.identity, transform);
+                //
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape))
