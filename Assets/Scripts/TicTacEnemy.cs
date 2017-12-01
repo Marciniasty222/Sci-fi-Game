@@ -17,7 +17,7 @@ public class TicTacEnemy : MonoBehaviour, IKillable, IDamageable<float> {
 
     public void Kill()
     {
-        Destroy(gameObject);
+        GetComponent<Rigidbody>().isKinematic = false;
     }
 
     public void Damage(float damageTaken)
